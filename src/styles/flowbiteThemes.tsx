@@ -44,7 +44,12 @@ export const badgeTheme = {
     "root": {
         "base": "flex h-fit items-center gap-1 font-semibold",
         "color": {
-            "weekGreen": "bg-green-500 text-green-100 group-hover:bg-green-200 dark:bg-green-200 dark:text-green-900 dark:group-hover:bg-green-300",
+            "blue": "bg-blue-500 text-blue-100 group-hover:bg-blue-200 dark:bg-blue-200 dark:text-blue-900 dark:group-hover:bg-blue-300",
+            "red": "bg-red-500 text-red-100 group-hover:bg-red-200 dark:bg-red-200 dark:text-red-900 dark:group-hover:bg-red-300",
+            "green": "bg-green-500 text-green-100 group-hover:bg-green-200 dark:bg-green-200 dark:text-green-900 dark:group-hover:bg-green-300",
+            "pink": "bg-pink-500 text-pink-100 group-hover:bg-pink-200 dark:bg-pink-200 dark:text-pink-900 dark:group-hover:bg-pink-300",
+            "yellow": "bg-yellow-500 text-yellow-100 group-hover:bg-yellow-200 dark:bg-yellow-200 dark:text-yellow-900 dark:group-hover:bg-yellow-300",
+            "purple": "bg-purple-500 text-purple-100 group-hover:bg-purple-200 dark:bg-purple-200 dark:text-purple-900 dark:group-hover:bg-purple-300"
         }
     }
 }

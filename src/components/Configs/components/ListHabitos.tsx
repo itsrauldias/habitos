@@ -8,6 +8,7 @@ import { getDayhabitsByHabitId } from "../../../services/diaHabitoService";
 import { Habito } from "../../../types/Habito";
 import FbrModal from "../../FbrModal";
 import { badgeTheme, toggleSwitchTheme } from "../../../styles/flowbiteThemes";
+import { getSysThemeColor } from "../../../services/sysThemeColorService";
 
 type HabitItemProps = {
     habito: Habito,
@@ -15,6 +16,8 @@ type HabitItemProps = {
 }
 
 export default function ListHabitos() {
+
+    const sysThemeColor = getSysThemeColor()
 
     const [habitosList, setHabitosList] = useState<Habito[]>(getAllHabitos())
 
@@ -38,7 +41,7 @@ export default function ListHabitos() {
     }
 
     return (<>
-        <span className="text-2xl font-bold tracking-tight text-gray-700 dark:text-slate-300">Meus hábitos</span>
+        <span className={`text-2xl font-bold tracking-tight text-${sysThemeColor}-500`}>Meus hábitos</span>
         <div className="flex gap-1">
             <TextInput
                 type="text"
@@ -47,7 +50,7 @@ export default function ListHabitos() {
                 onChange={(e: any) => setHabitoInput(e.target.value)}
             />
             <Button
-                color='dark'
+                color={sysThemeColor}
                 className="items-center justify-center"
                 onClick={handleCreateHabito}
             >
@@ -61,6 +64,8 @@ export default function ListHabitos() {
 }
 
 function HabitItem({ habito, onDone }: HabitItemProps) {
+
+    const sysThemeColor = getSysThemeColor()
 
     const [inputValue, setInputValue] = useState(habito.descricao)
 
@@ -103,55 +108,55 @@ function HabitItem({ habito, onDone }: HabitItemProps) {
     return (
         <div className="border border-slate-300 dark:border-slate-700 rounded-lg p-2" style={{ wordBreak: 'break-word' }}>
 
-            <ToggleSwitch theme={toggleSwitchTheme} checked={habito.status} label={habito.descricao} onChange={() => handleSetHabitoAtivo(habito.id)} color="success" />
+            <ToggleSwitch theme={toggleSwitchTheme} checked={habito.status} label={habito.descricao} onChange={() => handleSetHabitoAtivo(habito.id)} color={sysThemeColor} />
 
             <div className="flex gap-1 mt-2">
                 <Badge
                     size='sm'
                     theme={badgeTheme}
-                    color={`${habito.weekdaysSelected?.includes(1) ? 'weekGreen' : 'gray'}`}
+                    color={`${habito.weekdaysSelected?.includes(1) ? sysThemeColor : 'gray'}`}
                     style={{ cursor: 'pointer' }}
                     onClick={() => handleChangeWeekdaysArray(habito.id, 1)}
                 >D</Badge>
                 <Badge
                     size='sm'
                     theme={badgeTheme}
-                    color={`${habito.weekdaysSelected?.includes(2) ? 'weekGreen' : 'gray'}`}
+                    color={`${habito.weekdaysSelected?.includes(2) ? sysThemeColor : 'gray'}`}
                     style={{ cursor: 'pointer' }}
                     onClick={() => handleChangeWeekdaysArray(habito.id, 2)}
                 >S</Badge>
                 <Badge
                     size='sm'
                     theme={badgeTheme}
-                    color={`${habito.weekdaysSelected?.includes(3) ? 'weekGreen' : 'gray'}`}
+                    color={`${habito.weekdaysSelected?.includes(3) ? sysThemeColor : 'gray'}`}
                     style={{ cursor: 'pointer' }}
                     onClick={() => handleChangeWeekdaysArray(habito.id, 3)}
                 >T</Badge>
                 <Badge
                     size='sm'
                     theme={badgeTheme}
-                    color={`${habito.weekdaysSelected?.includes(4) ? 'weekGreen' : 'gray'}`}
+                    color={`${habito.weekdaysSelected?.includes(4) ? sysThemeColor : 'gray'}`}
                     style={{ cursor: 'pointer' }}
                     onClick={() => handleChangeWeekdaysArray(habito.id, 4)}
                 >Q</Badge>
                 <Badge
                     size='sm'
                     theme={badgeTheme}
-                    color={`${habito.weekdaysSelected?.includes(5) ? 'weekGreen' : 'gray'}`}
+                    color={`${habito.weekdaysSelected?.includes(5) ? sysThemeColor : 'gray'}`}
                     style={{ cursor: 'pointer' }}
                     onClick={() => handleChangeWeekdaysArray(habito.id, 5)}
                 >Q</Badge>
                 <Badge
                     size='sm'
                     theme={badgeTheme}
-                    color={`${habito.weekdaysSelected?.includes(6) ? 'weekGreen' : 'gray'}`}
+                    color={`${habito.weekdaysSelected?.includes(6) ? sysThemeColor : 'gray'}`}
                     style={{ cursor: 'pointer' }}
                     onClick={() => handleChangeWeekdaysArray(habito.id, 6)}
                 >S</Badge>
                 <Badge
                     size='sm'
                     theme={badgeTheme}
-                    color={`${habito.weekdaysSelected?.includes(7) ? 'weekGreen' : 'gray'}`}
+                    color={`${habito.weekdaysSelected?.includes(7) ? sysThemeColor : 'gray'}`}
                     style={{ cursor: 'pointer' }}
                     onClick={() => handleChangeWeekdaysArray(habito.id, 7)}
                 >S</Badge>
