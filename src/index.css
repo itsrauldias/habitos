@@ -1,0 +1,9 @@
+@import url('./styles/scrollbar.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.teste div {
+    transition: all 1s;
+}

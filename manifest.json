@@ -1,0 +1,30 @@
+{
+    "short_name": "Hábitos",
+    "name": "Hábitos",
+    "description": "Registre e monitore seus hábitos diariamente",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#121827",
+    "background_color": "#121827",
+    "icons": [
+        {
+            "src": "dev.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/screenshots/wide.png",
+            "type": "image/png",
+            "sizes": "1257x701",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/screenshots/narrow.png",
+            "type": "image/jpg",
+            "sizes": "499x979",
+            "form_factor": "narrow"
+        }
+    ]
+}

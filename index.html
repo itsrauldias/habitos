@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR" style="height: 100%">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/dev.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#343a40" />
+  <title>Hábitos</title>
+  <style>
+    .noselect {
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      -khtml-user-select: none;
+      /* Konqueror HTML */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* Internet Explorer/Edge */
+      user-select: none;
+      /* Non-prefixed version, currently */
+    }
+  </style>
+</head>
+
+<body class="bg-slate-200 dark:bg-gray-900 dark:text-gray-400 antialiased h-full max-h-full">
+  <div id="root" class="flex flex-col h-full max-h-full  noselect"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
