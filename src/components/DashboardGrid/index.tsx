@@ -7,9 +7,11 @@ import { toggleSwitchTheme } from "../../styles/flowbiteThemes";
 import { Habito, HabitoWithDayCheck } from "../../types/Habito";
 import { getAllHabitos } from "../../services/habitosService";
 import { getAllDiaHabitos, setDiaHabitoDone } from "../../services/diaHabitoService";
+import { getSysThemeColor } from "../../services/sysThemeColorService";
 
 export default function DashboardGrid() {
 
+    const sysThemeColor = getSysThemeColor()
     const [anoSelecionado, setAnoSelecionado] = useState(new Date())
 
     const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
@@ -53,13 +55,13 @@ export default function DashboardGrid() {
                 <div className="flex justify-between px-2 md:px-4">
                     <div />
                     <div className="flex items-center">
-                        <Button pill color="dark" className="" onClick={() => handleRemoveYear()}>
+                        <Button pill color={sysThemeColor} className="" onClick={() => handleRemoveYear()}>
                             <HiArrowLeft />
                         </Button>
-                        <span className="text-2xl mx-2">
+                        <span className={`text-2xl mx-2 text-${sysThemeColor}-500`}>
                             {anoSelecionado.getFullYear()}
                         </span>
-                        <Button pill color="dark" className="" onClick={() => handleAddYear()}>
+                        <Button pill color={sysThemeColor} className="" onClick={() => handleAddYear()}>
                             <HiArrowRight />
                         </Button>
                     </div>
@@ -112,6 +114,8 @@ export default function DashboardGrid() {
 
 function DaySquare({ dataSquare, onUpdate }: any) {
 
+    const sysThemeColor = getSysThemeColor()
+
     const [isOpen, setIsOpen] = useState(false);
 
     const habitsList = getAllHabitos()
@@ -140,18 +144,76 @@ function DaySquare({ dataSquare, onUpdate }: any) {
 
     const handleClose = () => setIsOpen(false);
 
-    let squareColorClass = 'bg-slate-300 dark:bg-slate-800'
+    var squareColorClass = 'bg-slate-200 dark:bg-slate-800'
+
     if (dayHabits.length >= 0 && dayHabits.length < 1) {
-        squareColorClass = 'bg-slate-300 dark:bg-slate-800'
+        squareColorClass = 'bg-slate-200 dark:bg-slate-800'
     } else if (dayHabits.length >= 1 && dayHabits.length < 2) {
-        squareColorClass = 'bg-blue-400 dark:bg-blue-800'
+        if (sysThemeColor == "blue") {
+            squareColorClass = 'bg-blue-400 dark:bg-blue-800'
+        } else if (sysThemeColor == "red") {
+            squareColorClass = 'bg-red-400 dark:bg-red-800'
+        } else if (sysThemeColor == "pink") {
+            squareColorClass = 'bg-pink-400 dark:bg-pink-800'
+        } else if (sysThemeColor == "yellow") {
+            squareColorClass = 'bg-yellow-400 dark:bg-yellow-800'
+        } else if (sysThemeColor == "purple") {
+            squareColorClass = 'bg-purple-400 dark:bg-purple-800'
+        } else if (sysThemeColor == "green") {
+            squareColorClass = 'bg-green-400 dark:bg-green-800'
+        } else {
+            squareColorClass = 'bg-blue-400 dark:bg-blue-800'
+        }
     } else if (dayHabits.length >= 2 && dayHabits.length < 3) {
-        squareColorClass = 'bg-blue-500 dark:bg-blue-700'
+        if (sysThemeColor == "blue") {
+            squareColorClass = 'bg-blue-500 dark:bg-blue-700'
+        } else if (sysThemeColor == "red") {
+            squareColorClass = 'bg-red-500 dark:bg-red-700'
+        } else if (sysThemeColor == "pink") {
+            squareColorClass = 'bg-pink-500 dark:bg-pink-700'
+        } else if (sysThemeColor == "yellow") {
+            squareColorClass = 'bg-yellow-500 dark:bg-yellow-700'
+        } else if (sysThemeColor == "purple") {
+            squareColorClass = 'bg-purple-500 dark:bg-purple-700'
+        } else if (sysThemeColor == "green") {
+            squareColorClass = 'bg-green-500 dark:bg-green-700'
+        } else {
+            squareColorClass = 'bg-blue-500 dark:bg-blue-700'
+        }
     } else if (dayHabits.length >= 3 && dayHabits.length < 4) {
-        squareColorClass = 'bg-blue-600 dark:bg-blue-600'
+        if (sysThemeColor == "blue") {
+            squareColorClass = 'bg-blue-600 dark:bg-blue-600'
+        } else if (sysThemeColor == "red") {
+            squareColorClass = 'bg-red-600 dark:bg-red-600'
+        } else if (sysThemeColor == "pink") {
+            squareColorClass = 'bg-pink-600 dark:bg-pink-600'
+        } else if (sysThemeColor == "yellow") {
+            squareColorClass = 'bg-yellow-600 dark:bg-yellow-600'
+        } else if (sysThemeColor == "purple") {
+            squareColorClass = 'bg-purple-600 dark:bg-purple-600'
+        } else if (sysThemeColor == "green") {
+            squareColorClass = 'bg-green-600 dark:bg-green-600'
+        } else {
+            squareColorClass = 'bg-blue-600 dark:bg-blue-600'
+        }
     } else if (dayHabits.length >= 4) {
-        squareColorClass = 'bg-blue-700 dark:bg-blue-500'
+        if (sysThemeColor == "blue") {
+            squareColorClass = 'bg-blue-700 dark:bg-blue-500'
+        } else if (sysThemeColor == "red") {
+            squareColorClass = 'bg-red-700 dark:bg-red-500'
+        } else if (sysThemeColor == "pink") {
+            squareColorClass = 'bg-pink-700 dark:bg-pink-500'
+        } else if (sysThemeColor == "yellow") {
+            squareColorClass = 'bg-yellow-700 dark:bg-yellow-500'
+        } else if (sysThemeColor == "purple") {
+            squareColorClass = 'bg-purple-700 dark:bg-purple-500'
+        } else if (sysThemeColor == "green") {
+            squareColorClass = 'bg-green-700 dark:bg-green-500'
+        } else {
+            squareColorClass = 'bg-blue-700 dark:bg-blue-500'
+        }
     }
+
 
     return (<>
         <div className={`h-12 w-12 px-1 rounded-md ${squareColorClass}`}
@@ -168,7 +230,7 @@ function DaySquare({ dataSquare, onUpdate }: any) {
                     <Progress
                         className="teste"
                         // style={{ transition: 'all 2s' }}
-                        progress={(100 * dayHabits.length) / dayHabitsList.length || 0} size="xl" color="green"
+                        progress={(100 * dayHabits.length) / dayHabitsList.length || 0} size="xl" color={sysThemeColor}
                     />
                 </div>
                 <div className="mt-8">
@@ -191,6 +253,7 @@ function DaySquare({ dataSquare, onUpdate }: any) {
 }
 
 function HabitDay({ habito, weee, weee2 }: any) {
+    const sysThemeColor = getSysThemeColor()
     const [isChecked, setIsChecked] = useState(habito.isDone)
 
     function handleSetChecked() {
@@ -200,6 +263,6 @@ function HabitDay({ habito, weee, weee2 }: any) {
     }
 
     return <>
-        <ToggleSwitch theme={toggleSwitchTheme} checked={isChecked} label={habito.descricao} onChange={() => handleSetChecked()} color="success" />
+        <ToggleSwitch theme={toggleSwitchTheme} checked={isChecked} label={habito.descricao} onChange={() => handleSetChecked()} color={sysThemeColor} />
     </>
 }

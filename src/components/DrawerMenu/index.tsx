@@ -5,7 +5,7 @@ import { HiPlus } from "react-icons/hi";
 
 type DrawerMenu = {
     ButtonTitle: ReactNode
-    ButtonColor: "blue" | "dark" | "light" | "success" | "failure" | "warning"
+    ButtonColor: string
     MenuTitle: string
     MenuIcon: IconType
     Content: ReactNode
