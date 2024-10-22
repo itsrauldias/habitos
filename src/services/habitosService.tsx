@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { Habito } from "../types/Habito"
+import dayjs from 'dayjs';
 
 function getAllHabitos() {
     let habitosList = JSON.parse(localStorage.getItem('habitos') + '')
@@ -56,12 +57,19 @@ function toggleHabitoAtivo(habitId: string) {
     localStorage.setItem('habitos', JSON.stringify(habitosListLocal))
 }
 
-function editHabito(habitId: string, value: string) {
+function editHabito(habitId: string, descricao: string, data: string) {
     let habitosListLocal: Habito[] = JSON.parse(localStorage.getItem('habitos') + '') || []
 
     const objIndex = habitosListLocal.findIndex(obj => obj.id == habitId);
 
-    habitosListLocal[objIndex].descricao = value
+    habitosListLocal[objIndex].descricao = descricao
+
+    habitosListLocal[objIndex].createdAt = new Date(
+        parseInt(dayjs(data).format('YYYY')),
+        parseInt(dayjs(data).add(-1, 'M').format("MM")),
+        parseInt(dayjs(data).format("DD")),
+        parseInt(dayjs().format("HH"))
+    )
 
     localStorage.setItem('habitos', JSON.stringify(habitosListLocal))
 }

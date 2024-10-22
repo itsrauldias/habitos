@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Badge, Button, TextInput, ToggleSwitch } from "flowbite-react";
+import { Badge, Button, TextInput, ToggleSwitch, Label } from "flowbite-react";
 import toast from "react-hot-toast";
 import { PiPlus } from "react-icons/pi";
 import dayjs from "dayjs";
@@ -68,6 +68,7 @@ function HabitItem({ habito, onDone }: HabitItemProps) {
     const sysThemeColor = getSysThemeColor()
 
     const [inputValue, setInputValue] = useState(habito.descricao)
+    const [inputValue2, setInputValue2] = useState(dayjs(habito.createdAt).format('YYYY-MM-DD'))
 
     const dayHabitsCounter = getDayhabitsByHabitId(habito.id)
 
@@ -90,7 +91,7 @@ function HabitItem({ habito, onDone }: HabitItemProps) {
     }
 
     function onClose() {
-        editHabito(habito.id, inputValue)
+        editHabito(habito.id, inputValue, inputValue2)
         toast.success('Hábito atualizado!', { position: 'bottom-right' })
         onDone()
     }
@@ -171,12 +172,20 @@ function HabitItem({ habito, onDone }: HabitItemProps) {
                             modalSize="sm"
                             onCloseFunction={() => onClose()}
                             content={<>
+                                <Label value="Descrição:" />
                                 <TextInput
                                     type="text"
                                     placeholder="Crie um novo hábito!"
                                     className="mb-3"
                                     value={inputValue}
                                     onChange={(e: any) => setInputValue(e.target.value)}
+                                />
+                                <Label value="Iniciado em:" />
+                                <input
+                                    type="date"
+                                    className="mb-3 block w-full border disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 bg-gray-50 text-gray-900 focus:border-cyan-500 focus:ring-cyan-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-cyan-500 dark:focus:ring-cyan-500 p-2.5 text-sm rounded-lg"
+                                    value={inputValue2}
+                                    onChange={(e: any) => setInputValue2(e.target.value)}
                                 />
                             </>}
                         />
