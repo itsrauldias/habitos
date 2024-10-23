@@ -1,7 +1,9 @@
 import { Badge } from "flowbite-react"
-import { setLocalSysThemeColor } from "../../../services/sysThemeColorService"
+import { getSysThemeColor, setLocalSysThemeColor } from "../../../services/sysThemeColorService"
 
 export default function SystemConfigs() {
+
+    const sysThemeColor = getSysThemeColor()
 
     const themeColorsList = [
         { value: "blue" },
@@ -19,7 +21,7 @@ export default function SystemConfigs() {
 
     return (
         <>
-            <span className="text-2xl font-bold tracking-tight text-gray-700 dark:text-slate-300">Tema:</span>
+            <span className={`text-2xl font-bold tracking-tight text-${sysThemeColor}-500`}>Tema:</span>
             <div className="flex flex-wrap gap-2 justify-center">
                 {themeColorsList.map((themeColor) => {
                     return (<div key={themeColor.value}>

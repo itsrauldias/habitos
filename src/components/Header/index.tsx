@@ -13,7 +13,7 @@ export default function Header() {
         <Navbar className={`bg-${sysThemeColor}-50 dark:bg-slate-900`}>
             <Navbar.Brand>
                 <img
-                    src="/habitos.png"
+                    src="/habitost.png"
                     alt="logo"
                     className='mr-2'
                     width={40}
