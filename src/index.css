@@ -7,3 +7,11 @@
 .teste div {
     transition: all 1s;
 }
+
+.bg-blue-50 {
+    background-color: #eceeff;
+}
+
+.bg-pink-50 {
+    background-color: #fff3fa;
+}
