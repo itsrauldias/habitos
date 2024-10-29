@@ -216,7 +216,7 @@ function DaySquare({ dataSquare, onUpdate }: any) {
 
 
     return (<>
-        <div className={`h-12 w-12 px-1 rounded-md ${squareColorClass}`}
+        <div className={`h-12 w-12 px-1 rounded-md ${squareColorClass} ${dayjs(dataSquare).format('YYYYMMDD') == dayjs().format('YYYYMMDD') && 'border-2 border-green-400 border-dashed'}`}
             onClick={() => setIsOpen(!isOpen)}>
         </div>
         <Drawer open={isOpen} onClose={handleClose} position={'bottom'}>
