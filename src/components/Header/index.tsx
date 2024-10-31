@@ -18,8 +18,11 @@ export default function Header() {
                     className='mr-2'
                     width={40}
                 />
-                <span className={`self-center whitespace-nowrap text-xl font-semibold text-${sysThemeColor}-500`}>
+                {/* <span className={`self-center whitespace-nowrap text-xl font-semibold text-${sysThemeColor}-500`}>
                     Hábitos
+                </span> */}
+                <span className={`text-4xl font-bold tracking-tight text-${sysThemeColor}-700`}>
+                    HÁBITOS
                 </span>
             </Navbar.Brand>
             <DrawerMenu
