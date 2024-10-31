@@ -22,7 +22,7 @@ export default function Header() {
                     Hábitos
                 </span> */}
                 <span className={`text-4xl font-bold tracking-tight text-${sysThemeColor}-700`}>
-                    HÁBITOS
+                    Hábitos
                 </span>
             </Navbar.Brand>
             <DrawerMenu

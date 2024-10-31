@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import url('./styles/scrollbar.css');
 
 @tailwind base;
@@ -5,7 +6,15 @@
 @tailwind utilities;
 
 * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Open Sans", sans-serif, system-ui;
+    font-optical-sizing: auto;
+    /* font-weight: 300; */
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .teste div {
