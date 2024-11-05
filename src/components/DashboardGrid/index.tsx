@@ -152,15 +152,15 @@ function DaySquare({ dataSquare, onUpdate }: any) {
         if (sysThemeColor == "blue") {
             squareColorClass = 'bg-blue-400 dark:bg-blue-800'
         } else if (sysThemeColor == "red") {
-            squareColorClass = 'bg-red-400 dark:bg-red-800'
+            squareColorClass = 'bg-red-400 dark:bg-red-900'
         } else if (sysThemeColor == "pink") {
-            squareColorClass = 'bg-pink-400 dark:bg-pink-800'
+            squareColorClass = 'bg-pink-300 dark:bg-pink-800'
         } else if (sysThemeColor == "yellow") {
-            squareColorClass = 'bg-yellow-400 dark:bg-yellow-800'
+            squareColorClass = 'bg-yellow-600 dark:bg-yellow-800'
         } else if (sysThemeColor == "purple") {
-            squareColorClass = 'bg-purple-400 dark:bg-purple-800'
+            squareColorClass = 'bg-purple-400 dark:bg-purple-900'
         } else if (sysThemeColor == "green") {
-            squareColorClass = 'bg-green-400 dark:bg-green-800'
+            squareColorClass = 'bg-green-800 dark:bg-green-800'
         } else {
             squareColorClass = 'bg-blue-400 dark:bg-blue-800'
         }
@@ -168,15 +168,15 @@ function DaySquare({ dataSquare, onUpdate }: any) {
         if (sysThemeColor == "blue") {
             squareColorClass = 'bg-blue-500 dark:bg-blue-700'
         } else if (sysThemeColor == "red") {
-            squareColorClass = 'bg-red-500 dark:bg-red-700'
+            squareColorClass = 'bg-red-500 dark:bg-red-800'
         } else if (sysThemeColor == "pink") {
-            squareColorClass = 'bg-pink-500 dark:bg-pink-700'
+            squareColorClass = 'bg-pink-400 dark:bg-pink-700'
         } else if (sysThemeColor == "yellow") {
             squareColorClass = 'bg-yellow-500 dark:bg-yellow-700'
         } else if (sysThemeColor == "purple") {
-            squareColorClass = 'bg-purple-500 dark:bg-purple-700'
+            squareColorClass = 'bg-purple-500 dark:bg-purple-800'
         } else if (sysThemeColor == "green") {
-            squareColorClass = 'bg-green-500 dark:bg-green-700'
+            squareColorClass = 'bg-green-700 dark:bg-green-700'
         } else {
             squareColorClass = 'bg-blue-500 dark:bg-blue-700'
         }
@@ -184,13 +184,13 @@ function DaySquare({ dataSquare, onUpdate }: any) {
         if (sysThemeColor == "blue") {
             squareColorClass = 'bg-blue-600 dark:bg-blue-600'
         } else if (sysThemeColor == "red") {
-            squareColorClass = 'bg-red-600 dark:bg-red-600'
+            squareColorClass = 'bg-red-600 dark:bg-red-700'
         } else if (sysThemeColor == "pink") {
-            squareColorClass = 'bg-pink-600 dark:bg-pink-600'
+            squareColorClass = 'bg-pink-500 dark:bg-pink-600'
         } else if (sysThemeColor == "yellow") {
-            squareColorClass = 'bg-yellow-600 dark:bg-yellow-600'
+            squareColorClass = 'bg-yellow-400 dark:bg-yellow-600'
         } else if (sysThemeColor == "purple") {
-            squareColorClass = 'bg-purple-600 dark:bg-purple-600'
+            squareColorClass = 'bg-purple-600 dark:bg-purple-700'
         } else if (sysThemeColor == "green") {
             squareColorClass = 'bg-green-600 dark:bg-green-600'
         } else {
@@ -200,20 +200,19 @@ function DaySquare({ dataSquare, onUpdate }: any) {
         if (sysThemeColor == "blue") {
             squareColorClass = 'bg-blue-700 dark:bg-blue-500'
         } else if (sysThemeColor == "red") {
-            squareColorClass = 'bg-red-700 dark:bg-red-500'
+            squareColorClass = 'bg-red-700 dark:bg-red-600'
         } else if (sysThemeColor == "pink") {
-            squareColorClass = 'bg-pink-700 dark:bg-pink-500'
+            squareColorClass = 'bg-pink-600 dark:bg-pink-500'
         } else if (sysThemeColor == "yellow") {
-            squareColorClass = 'bg-yellow-700 dark:bg-yellow-500'
+            squareColorClass = 'bg-yellow-300 dark:bg-yellow-500'
         } else if (sysThemeColor == "purple") {
-            squareColorClass = 'bg-purple-700 dark:bg-purple-500'
+            squareColorClass = 'bg-purple-700 dark:bg-purple-600'
         } else if (sysThemeColor == "green") {
-            squareColorClass = 'bg-green-700 dark:bg-green-500'
+            squareColorClass = 'bg-green-500 dark:bg-green-500'
         } else {
             squareColorClass = 'bg-blue-700 dark:bg-blue-500'
         }
     }
-
 
     return (<>
         <div className={`h-12 w-12 px-1 rounded-md ${squareColorClass} ${dayjs(dataSquare).format('YYYYMMDD') == dayjs().format('YYYYMMDD') && 'border-2 border-green-400 border-dashed'}`}
