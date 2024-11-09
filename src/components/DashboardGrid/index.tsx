@@ -232,7 +232,7 @@ function DaySquare({ dataSquare, onUpdate }: any) {
                         progress={(100 * dayHabits.length) / dayHabitsList.length || 0} size="xl" color={sysThemeColor}
                     />
                 </div>
-                <div className="mt-8">
+                <div className="mt-8" style={{ height: '40vh', overflow:'auto' }}>
                     {dayHabitsList?.map((dayHabit: HabitoWithDayCheck) => {
                         return (
                             <div key={dayHabit.id} className="flex gap-3 mb-2">
