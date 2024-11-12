@@ -120,19 +120,22 @@ function DaySquare({ dataSquare, onUpdate }: any) {
 
     const habitsList = getAllHabitos()
 
-    var dayHabitsList = habitsList ? habitsList.filter(function (obj: Habito) {
+    // Lista de hábitos concluídos no dia
+    const dayHabits = getAllDiaHabitos(dataSquare)
 
+    var dayHabitsList = habitsList ? habitsList.filter(function (obj: Habito) {
 
         // se a data do quadrado for maior ou igual a data de criação do hábito
         if (parseInt(dayjs(dataSquare).format('YYYYMMDD')) >= parseInt(dayjs(obj.createdAt).format('YYYYMMDD')) && obj.status == true) {
             return obj.weekdaysSelected.includes(parseInt(dayjs(dataSquare).format('d')) + 1);
+        } else {
+            if (dayHabits.filter((item: any) => dayjs(item.data).isSame(dataSquare, "day")).length > 0) {
+                return true
+            }
         }
 
 
     }) : [];
-
-    // Lista de hábitos concluídos no dia
-    const dayHabits = getAllDiaHabitos(dataSquare)
 
     dayHabitsList?.map((dayHabit: any) => {
         if (dayHabits.find((obj: { habitoId: any; }) => obj.habitoId == dayHabit.id)) {
