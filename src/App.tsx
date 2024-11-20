@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
-import { useThemeMode } from 'flowbite-react'
+import { ThemeMode, useThemeMode } from 'flowbite-react'
 import dayjs from "dayjs";
 import Header from './components/Header'
 import DashboardGrid from './components/DashboardGrid'
 // import Footer from './components/Footer'
-import { getSysThemeColor } from './services/sysThemeColorService';
+import { getSysThemeColor, getSysThemeDark } from './services/sysThemeColorService';
 
 import 'dayjs/locale/pt-br'
 dayjs.locale('pt-br')
@@ -12,8 +12,11 @@ dayjs.locale('pt-br')
 function App() {
 
   const theme = useThemeMode()
+
+  const sysThemeDark: ThemeMode = getSysThemeDark()
+
   useEffect(() => {
-    theme.setMode('auto')
+    theme.setMode(sysThemeDark)
   })
 
   const sysThemeColor = getSysThemeColor() + ''

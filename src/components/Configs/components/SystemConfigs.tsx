@@ -1,9 +1,10 @@
-import { Badge } from "flowbite-react"
-import { getSysThemeColor, setLocalSysThemeColor } from "../../../services/sysThemeColorService"
+import { Badge, Select } from "flowbite-react"
+import { getSysThemeColor, getSysThemeDark, setLocalSysThemeColor, setLocalSysThemeDark } from "../../../services/sysThemeColorService"
 
 export default function SystemConfigs() {
 
     const sysThemeColor = getSysThemeColor()
+    const sysThemeDak = getSysThemeDark()
 
     const themeColorsList = [
         { value: "blue" },
@@ -19,9 +20,21 @@ export default function SystemConfigs() {
         location.reload()
     }
 
+    function handleChangeThemeDark(e: any) {
+        console.log(e.target.value)
+        setLocalSysThemeDark(e.target.value)
+        location.reload()
+    }
+
     return (
         <>
             <span className={`text-2xl font-bold tracking-tight text-${sysThemeColor}-500`}>Tema:</span>
+            <Select id="countries" onChange={(e: any) => handleChangeThemeDark(e)}>
+                <option value={'auto'} selected={sysThemeDak == 'auto' && true}>Automático</option>
+                <option value={'light'} selected={sysThemeDak == 'light' && true}>Claro</option>
+                <option value={'dark'} selected={sysThemeDak == 'dark' && true}>Escuro</option>
+            </Select>
+            <span className={`text-2xl font-bold tracking-tight text-${sysThemeColor}-500`}>Cores:</span>
             <div className="flex flex-wrap gap-2 justify-center">
                 {themeColorsList.map((themeColor) => {
                     return (<div key={themeColor.value}>
