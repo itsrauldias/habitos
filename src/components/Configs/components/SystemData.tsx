@@ -36,6 +36,9 @@ export default function SystemData() {
                 localStorage.setItem('flowbite-theme-mode', JSON.stringify(data.find(item => item.name === "flowbite_theme_mode").value))
                 localStorage.setItem('sysColorTheme', JSON.stringify(data.find(item => item.name === "sysColorTheme").value))
                 toast.success('Dados importados com sucesso!');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
             } else {
                 toast.error('Dados inválidos!');
             }
