@@ -1,6 +1,7 @@
 import { Card } from "flowbite-react";
 import ListHabitos from "./components/ListHabitos";
 import SystemConfigs from "./components/SystemConfigs";
+import SystemData from "./components/SystemData";
 
 export default function Configs() {
 
@@ -10,6 +11,9 @@ export default function Configs() {
         </Card>
         <Card className="mb-2">
             <ListHabitos />
+        </Card>
+        <Card className="mb-2">
+            <SystemData />
         </Card>
     </>)
 }
