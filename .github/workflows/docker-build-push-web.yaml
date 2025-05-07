@@ -35,6 +35,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
+          platforms: linux/amd64,linux/arm64
           tags: ${{ secrets.DOCKER_USERNAME }}/habitos:${{ steps.vars.outputs.short_sha }}
           output: type=image,name=${{ secrets.DOCKER_USERNAME }}/habitos:${{ steps.vars.outputs.short_sha }},push=false
           labels: |
