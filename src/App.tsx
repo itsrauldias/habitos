@@ -7,6 +7,7 @@ import DashboardGrid from './components/DashboardGrid'
 import { getSysThemeColor, getSysThemeDark } from './services/sysThemeColorService';
 
 import 'dayjs/locale/pt-br'
+import PWAInstallBanner from './PWAInstallBanner';
 dayjs.locale('pt-br')
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <DashboardGrid />
         </div>
       </div >
+      <PWAInstallBanner />
       {/* <Footer /> */}
     </div >
   )
